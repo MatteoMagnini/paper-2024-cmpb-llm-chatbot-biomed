@@ -1,23 +1,51 @@
-\documentclass[preprint,12pt]{elsarticle}
-
-%% Use the option review to obtain double line spacing
-%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
-
-%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
-%% for a journal layout:
-%% \documentclass[final,1p,times]{elsarticle}
-%% \documentclass[final,1p,times,twocolumn]{elsarticle}
-%% \documentclass[final,3p,times]{elsarticle}
-%% \documentclass[final,3p,times,twocolumn]{elsarticle}
-%% \documentclass[final,5p,times]{elsarticle}
-%% \documentclass[final,5p,times,twocolumn]{elsarticle}
-
-%% For including figures, graphicx.sty has been loaded in
-%% elsarticle.cls. If you prefer to use the old commands
-%% please give \usepackage{epsfig}
-
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% First comes an example EPS file -- just ignore it and
+% proceed on the \documentclass line
+% your LaTeX will extract the file if required
+\begin{filecontents*}{example.eps}
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 19 19 221 221
+%%CreationDate: Mon Sep 29 1997
+%%Creator: programmed by hand (JK)
+%%EndComments
+gsave
+newpath
+  20 20 moveto
+  20 220 lineto
+  220 220 lineto
+  220 20 lineto
+closepath
+2 setlinewidth
+gsave
+  .4 setgray fill
+grestore
+stroke
+grestore
+\end{filecontents*}
+%
+\RequirePackage{fix-cm}
+%
+%\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
 \usepackage{graphicx}
-\usepackage[graphicx]{realboxes}
 \usepackage{rotating}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -46,110 +74,66 @@
 \usepackage{hyperref}
 \usepackage{adjustbox}
 \usepackage{lineno,hyperref}  
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{cleveref}
-\modulolinenumbers[5]
-\renewcommand{\baselinestretch}{1.25}
 
-
-\journal{Computer Methods and Programs in Biomedicine}
-
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
 \begin{document}
-
-\begin{frontmatter}
-
-%% Title, authors and addresses
-
-%% use the tnoteref command within \title for footnotes;
-%% use the tnotetext command for theassociated footnote;
-%% use the fnref command within \author or \address for footnotes;
-%% use the fntext command for theassociated footnote;
-%% use the corref command within \author for corresponding author footnotes;
-%% use the cortext command for theassociated footnote;
-%% use the ead command for the email address,
-%% and the form \ead[url] for the home page:
-%% \title{Title\tnoteref{label1}}
-%% \tnotetext[label1]{}
-%% \author{Name\corref{cor1}\fnref{label2}}
-%% \ead{email address}
-%% \ead[url]{home page}
-%% \fntext[label2]{}
-%% \cortext[cor1]{}
-%% \affiliation{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
-%% \fntext[label3]{}
 
 \title{Privacy-Preserving LLM-Based Chatbots for Chronic Disease Self-management}
 
-%% use optional labels to link authors explicitly to addresses:
-%% \author[label1,label2]{}
-%% \affiliation[label1]{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
-%%
-%% \affiliation[label2]{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
+%\titlerunning{Short form of title}        % if too long for running head
 
-\author[label1]{Sara Montagna\corref{cor1}}
-\ead{sara.montagna@uniurb.it} 
-\ead[url]{https://www.uniurb.it/persone/sara-montagna}
-\author[label1]{Sfefano Ferretti}
-\author[label1]{Lorenz Cuno Klopfenstein}
-\author[label1]{Michelangelo Ungolo}
-\author[label3]{Martino Francesco Pengo}
-\author[label2]{Gianluca Aguzzi}
-\author[label2]{Matteo Magnini}
+\author{Gianluca Aguzzi$^*$ \and Matteo Magnini$^*$ \and Martino Francesco Pengo \and Stefano Ferretti \and Sara Montagna
+}
 
-\cortext[cor1]{Corresponding author}
-\affiliation[label1]{organization={Department of Pure and Applied Sciences, University of Urbino},
-             addressline={Piazza della Repubblica, 13},
-             city={Urbino},
-             postcode={61029},
-             state={Italy}
-             }
+%\authorrunning{Short form of author list} % if too long for running head
 
-\affiliation[label2]{organization={Department of Computer Science and Engineering, University of Bologna},
-             addressline={Via dell'Università, 50},
-             city={Cesena},
-             postcode={47521},
-             state={Italy}
-             }
+\institute{Sara Montagna \at DiSPeA--University of Urbino Carlo Bo \\
+              Piazza della Repubblica  13, Urbino, Italy \\
+              \email{sara.montagna}           
+        \and
+          Martino Pengo\at Istituto Auxologico Italiano IRCCS \& SMS--University of Milano Bicocca \\
+            Milan, Italy\\
+            \email{m.pengo@auxologico.it}
+          \and 
+           Stefano Ferretti, Gianluca Aguzzi, Matteo Magnini \at DISI--University of Bologna \\
+           Via dell'Università 50, Cesena, Italy\\
+          \email{claudio.borghi@unibo.it}  
+            }
 
-\affiliation[label3]{organization={Istituto Auxologico Italiano IRCCS \& University of Milano-Bicocca},
-             addressline={Faculty of Medicine},
-             city={Milan},
-             %postcode={47521},
-             state={Italy}
-             }
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
 
 \begin{abstract}
-\begin{comment}
-%
-Medical chatbots are enabling a new way of providing medical services and are becoming a crucial component of telemedicine applications.
-%
-Large Language Models~(LLMs) have shown potential in improving chatbot-based systems in healthcare. However, their adoption in clinical practice faces several challenges, among which reliability issues, the need for clinical trials, and privacy concerns.
 
-In this paper, we provide a discussion of the main issues that arise once adopting LLMs for medical chatbots in the context of chronic disease self-management, and accordingly, we define an architecture specifically devised to deal with such issues.
+%Medical chatbots are enabling a new way of providing medical services and are becoming a crucial component of telemedicine applications.
+%%
+%Large Language Models~(LLMs) have shown potential in improving chatbot-based systems in healthcare. However, their adoption in clinical practice faces several challenges, among which reliability issues, the need for clinical trials, and privacy concerns.
 %
-In particular, we compare two different possible solutions aimed at preventing sensitive data from being disclosed to third parties while, at the same time, offering a compelling LLM-based experience. 
+%In this paper, we provide a discussion of the main issues that arise once adopting LLMs for medical chatbots in the context of chronic disease self-management, and accordingly, we define an architecture specifically devised to deal with such issues.
+%%
+%In particular, we compare two different possible solutions aimed at preventing sensitive data from being disclosed to third parties while, at the same time, offering a compelling LLM-based experience. 
+%%
+%The first one is based on the idea of having a filtering mechanism such that sensitive data is treated locally while general sentences are transmitted to an external LLM (e.g., GPT-3.5). The second approach resorts to a locally deployed LLM that exploits open-source models, eliminating the risk of data exposure. 
 %
-The first one is based on the idea of having a filtering mechanism such that sensitive data is treated locally while general sentences are transmitted to an external LLM (e.g., GPT-3.5). The second approach resorts to a locally deployed LLM that exploits open-source models, eliminating the risk of data exposure. 
+%Experimental results underscore the challenges in effectively instructing the local LLM so as to provide performances comparable to GPT-3.5 for all the required tasks. 
+%%
+%However, among the six open models we tested, two emerges as providing highly reliable and accurate answers according to domain experts evaluation, similar or even better to those provided by GPT-3.5.
 
-Experimental results underscore the challenges in effectively instructing the local LLM so as to provide performances comparable to GPT-3.5 for all the required tasks. 
-%
-However, among the six open models we tested, two emerges as providing highly reliable and accurate answers according to domain experts evaluation, similar or even better to those provided by GPT-3.5.
-\end{comment}
 \emph{Background and Objective}: 
 %
 Medical chatbots are reshaping the delivery of medical services and becoming integral to telemedicine, propelled by advancements in Large Language Models (LLMs). 
@@ -177,30 +161,13 @@ However, our examination of six open models identified two that consistently pro
 Our findings suggest that carefully selected and configured Open-LLMs can offer a privacy-preserving, yet promising alternative to external LLM services, such as those of the GPT family, fostering safer and more reliable telemedicine practices.
 %
 Future efforts will focus on fine-tuning local models to enhance their performance across all tasks.
-%
+
+
+
+\keywords{Large Language Model \and Medical Chatbot \and Chronic Disease Self-Management \and Patient Empowerment}
+% \PACS{PACS code1 \and PACS code2 \and more}
+\subclass{MSC code1 \and MSC code2 \and more}
 \end{abstract}
-
-
-
-%%Graphical abstract
-%\begin{graphicalabstract}
-%\includegraphics{grabs}
-%\end{graphicalabstract}
-
-%%Research highlights
-%\begin{highlights}
-%\item Research highlight 1
-%\item Research highlight 2
-%\end{highlights}
-
-\begin{keyword}
-Large Language Model \sep Medical Chatbot \sep Chronic Disease Self-Management \sep Patient Empowerment
-\end{keyword}
-
-\end{frontmatter}
-
-%% \linenumbers
-
 \section{Introduction}
 
 Recent advancements in generative AI have opened the door for using powerful deep learning techniques that could be used in health-related contexts and potentially support health information-seeking.
@@ -642,7 +609,7 @@ three main tests, the first is related to the component related to the intent an
 To assess the effectiveness of the component dedicated to intent recognition, 
 we generate performance metrics for the trained model and the instructed Open-LLMs with the sentiment analysis prompt by comparing the output labels with our ground truth. 
 %
-The comparative analysis, as illustrated in ~\Cref{fig:cm1,fig:cm2}, reveals that the trained ML.NET~2.0 models significantly outperform other (LLMs). 
+The comparative analysis, as illustrated in Figure~\ref{fig:cm1,fig:cm2}, reveals that the trained ML.NET~2.0 models significantly outperform other (LLMs). 
 %
 This superior performance can be attributed to the fine-tuning phase performed with the ML.NET~2.0 framework. 
 Additionally, it is noteworthy that smaller models demonstrate limitations in responding accurately in our target language, Italian, suggesting a correlation between model size and language proficiency.
@@ -772,7 +739,7 @@ However, some considerations come:
 \end{enumerate}
 %
 \noindent The adoption of open models locally deployed resolves all these issues but results in a significant loss of response quality, as demonstrated in~
-\Cref{fig:cm1,fig:cm2} Table~\ref{categorization:results} and Table~\ref{tab:req}. 
+Figure~\ref{fig:cm1,fig:cm2} Table~\ref{categorization:results} and Table~\ref{tab:req}. 
 %
 The ability of open models to correctly classify questions and properly extract parameters is strongly compromised in the solution that leverages open models, possibly requiring a fine-tuning to addressing these specific tasks.
 %
@@ -788,48 +755,13 @@ Furthermore, RAG can be considered to leverage the dataset that we collected for
 %
 Lastly, exploiting larger models, such as Falcon 180b\footnote{\url{https://huggingface.co/tiiuae/falcon-180B}}, may provide enhancements similar to those observed in GPT-3.5 Turbo, presenting a promising direction for future research, even though the findings of this study underscore that model size alone does not guarantee enhanced performance.
 
-\section*{Acknowledgements}
-
-\paragraph{Statements of ethical approval}
-This study has been conducted involving no patient, no volunteer, and no animal.
-%
-No personal or sensitive data has been exploited.
-
-\paragraph{Fundings}
-
-The authors declare that there was no financial support for this work.
-
-\paragraph{Declaration of Competing Interest}
-%
-The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
-
-\paragraph{Declaration of generative AI in scientific writing}
-%
-During the preparation of this work, the authors used GitHub’s Copilot in order to speed-up their writing.
-%
-After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
-
-%\gamm{CRediT authorship contribution statement}
 
 
-%% If you have bibdatabase file and want bibtex to generate the
-%% bibitems, please use
-%%
-\bibliographystyle{elsarticle-num} 
+
+
+\bibliographystyle{spmpsci} 
 \bibliography{biblio}
 
-%% else use the following coding to input the bibitems directly in the
-%% TeX file.
-
-% \begin{thebibliography}{00}
-
-% %% \bibitem{label}
-% %% Text of bibliographic item
-
-% \bibitem{}
-
-% \end{thebibliography}
 \end{document}
-\endinput
-%%
-%% End of file `elsarticle-template-num.tex'.
+% end of file template.tex
+
