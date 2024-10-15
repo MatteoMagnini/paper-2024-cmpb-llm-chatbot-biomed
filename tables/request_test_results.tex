@@ -1,0 +1,33 @@
+% Please add the following required packages to your document preamble:
+%\usepackage{multirow}
+\begin{table}[ht]
+\centering
+
+
+\begin{tabular}{|l|rrrr|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Model}} & \multicolumn{4}{c|}{Accuracy} \\ \cline{2-5} 
+\multicolumn{1}{|c|}{} & \multicolumn{1}{l|}{Measure} & \multicolumn{1}{l|}{Quantity} & \multicolumn{1}{l|}{Format} & \multicolumn{1}{l|}{Overall} \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Alfred & \multicolumn{1}{r|}{0.59} & \multicolumn{1}{r|}{0.59} & \multicolumn{1}{r|}{0.72} & 0.32 \\ \hline
+ChatGPT3.5 & \multicolumn{1}{r|}{0.77} & \multicolumn{1}{r|}{0.79} & \multicolumn{1}{r|}{0.96} & 0.62 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Llama2 70b & \multicolumn{1}{r|}{0.71} & \multicolumn{1}{r|}{0.76} & \multicolumn{1}{r|}{0.71} & 0.45 \\ \hline
+Llama2 13b & \multicolumn{1}{r|}{0.56} & \multicolumn{1}{r|}{0.52} & \multicolumn{1}{r|}{0.82} & 0.37 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Llama2 7b & \multicolumn{1}{r|}{0.35} & \multicolumn{1}{r|}{0.47} & \multicolumn{1}{r|}{0.75} & 0.23 \\ \hline
+Mistral & \multicolumn{1}{r|}{0.48} & \multicolumn{1}{r|}{0.56} & \multicolumn{1}{r|}{0.67} & 0.28 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Mixtral & \multicolumn{1}{r|}{0.15} & \multicolumn{1}{r|}{0.26} & \multicolumn{1}{r|}{0.58} & 0.13 \\ \hline
+\end{tabular}
+
+\caption{
+    Results of the analysis phase for request messages.
+    %
+    The first column describes the model used in the experiments (116 queries in total).
+    %
+    The following four columns report the accuracy for the measure, the quantity, the format and for all combined.
+    %
+}
+\label{tab:req}
+\end{table}

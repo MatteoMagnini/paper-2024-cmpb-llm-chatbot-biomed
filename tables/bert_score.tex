@@ -1,0 +1,23 @@
+% Please add the following required packages to your document preamble:
+%\usepackage{multirow}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|rrr|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Model}} & \multicolumn{3}{c|}{Bert Score} \\ \cline{2-4}
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{Precision} & \multicolumn{1}{c|}{Recall} & \multicolumn{1}{c|}{F1} \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Alfred & \multicolumn{1}{r|} {0.70} & \multicolumn{1}{r|} {0.73} & \multicolumn{1}{r|} {0.72} \\ \hline 
+Llama2:70b & \multicolumn{1}{r|} {0.68} & \multicolumn{1}{r|} {0.73} & \multicolumn{1}{r|} {0.71} \\ \hline 
+\rowcolor[HTML]{EFEFEF}
+Llama2:13b & \multicolumn{1}{r|} {0.67} & \multicolumn{1}{r|} {0.73} & \multicolumn{1}{r|} {0.70} \\ \hline 
+Llama2:7b & \multicolumn{1}{r|} {0.67} & \multicolumn{1}{r|} {0.72} & \multicolumn{1}{r|} {0.69} \\ \hline 
+\rowcolor[HTML]{EFEFEF}
+Mistral & \multicolumn{1}{r|} {0.67} & \multicolumn{1}{r|} {0.72} & \multicolumn{1}{r|} {0.69} \\ \hline 
+Mixtral & \multicolumn{1}{r|} {0.67} & \multicolumn{1}{r|} {0.72} & \multicolumn{1}{r|} {0.69} \\ \hline 
+\end{tabular}
+\caption{Evaluation of LLMs responses via BERTScore: this analysis presents the outcomes of assessing open LLM's performances using BERTScore, based on a set of 128 questions and using as reference GPT-3.5.
+%
+The report includes average values of precision, F1 score, and recall as calculated through BERTScore metrics.}
+\label{bertscore}
+\end{table}

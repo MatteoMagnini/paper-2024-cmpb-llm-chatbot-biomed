@@ -1,0 +1,32 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table*}[]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|rrrr|rrrr|r|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Model}} & \multicolumn{4}{c|}{Precision} & \multicolumn{4}{c|}{Recall} & \multicolumn{1}{l|}{\multirow{2}{*}{Accuracy}} \\ \cline{2-9}
+\multicolumn{1}{|c|}{} & \multicolumn{1}{l|}{General} & \multicolumn{1}{l|}{Insertion} & \multicolumn{1}{l|}{Request} & \multicolumn{1}{l|}{Mood} & \multicolumn{1}{l|}{General} & \multicolumn{1}{l|}{Insertion} & \multicolumn{1}{l|}{Request} & \multicolumn{1}{l|}{Mood} & \multicolumn{1}{l|}{} \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Alfred & \multicolumn{1}{r|}{0.39} & \multicolumn{1}{r|}{0.81} & \multicolumn{1}{r|}{0.21} & \multicolumn{1}{r|}{0.12} & \multicolumn{1}{r|}{0.42} & \multicolumn{1}{r|}{0.43} & \multicolumn{1}{r|}{0.78} & \multicolumn{1}{r|}{0.25} & 0.46 \\ \hline
+Llama2:70b & \multicolumn{1}{r|}{0.39} & \multicolumn{1}{r|}{0.81} & \multicolumn{1}{r|}{0.87} & \multicolumn{1}{r|}{1.00} & \multicolumn{1}{r|}{0.77} & \multicolumn{1}{r|}{0.70} & \multicolumn{1}{r|}{0.94} & \multicolumn{1}{r|}{0.41} & 0.74 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Llama2:13b & \multicolumn{1}{r|}{0.16} & \multicolumn{1}{r|}{0.42} & \multicolumn{1}{r|}{0.10} & \multicolumn{1}{r|}{1.00} & \multicolumn{1}{r|}{0.31} & \multicolumn{1}{r|}{0.36} & \multicolumn{1}{r|}{1.00} & \multicolumn{1}{r|}{0.15} & 0.28 \\ \hline
+Llama2:7b & \multicolumn{1}{r|}{0.39} & \multicolumn{1}{r|}{0.43} & \multicolumn{1}{r|}{0.49} & \multicolumn{1}{r|}{0.69} & \multicolumn{1}{r|}{0.42} & \multicolumn{1}{r|}{0.61} & \multicolumn{1}{r|}{0.58} & \multicolumn{1}{r|}{0.19} & 0.46 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+Mistral & \multicolumn{1}{r|}{0.40} & \multicolumn{1}{r|}{0.71} & \multicolumn{1}{r|}{0.45} & \multicolumn{1}{r|}{0.19} & \multicolumn{1}{r|}{0.38} & \multicolumn{1}{r|}{0.61} & \multicolumn{1}{r|}{0.85} & \multicolumn{1}{r|}{0.08} & 0.51 \\ \hline
+Mixtral & \multicolumn{1}{r|}{0.61} & \multicolumn{1}{r|}{0.73} & \multicolumn{1}{r|}{0.84} & \multicolumn{1}{r|}{0.81} & \multicolumn{1}{r|}{0.66} & \multicolumn{1}{r|}{0.68} & \multicolumn{1}{r|}{0.95} & \multicolumn{1}{r|}{0.54} & 0.74 \\ \hline
+\rowcolor[HTML]{EFEFEF}
+ML.NET~2.0 framework & \multicolumn{1}{r|}{0.94} & \multicolumn{1}{r|}{0.99} & \multicolumn{1}{r|}{0.99} & \multicolumn{1}{r|}{0.84} & \multicolumn{1}{r|}{0.95} & \multicolumn{1}{r|}{0.95} & \multicolumn{1}{r|}{0.98} & \multicolumn{1}{r|}{1.00} & 0.96 \\ \hline
+\end{tabular}
+}
+\caption{Results of the classification phase for all messages.
+%
+Models used in the experiments are reported in the first column.
+%
+The next two macro columns -- precision and recall -- report the corresponding metric per single class (general, insertion, request and mood).
+%
+The last column shows the overall accuracy of the models.}
+\label{categorization:results}
+\end{table*}
+
