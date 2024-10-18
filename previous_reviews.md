@@ -1,4 +1,4 @@
-REVIEW da Computer Methods and Programs in Biomedicine Update  
+REVIEW da Computer Methods and Programs in Biomedicine Update 
 
 
  This paper investigates the use of LLM-based chatbots for patient self-management. To alleviate concerns of privacy leakage, the paper proposes two solutions: an intent classification module in conjunction with a LLM service and the use of local open-source LLMs. The authors identified four categories of user intent and compared the data extraction and semantics of the two proposed solutions.
@@ -133,4 +133,4 @@ b. Fig.3 on pg 18 - box plot for mixtral model is missing. The dots are not expl
 
 
 Reviewer #3: This field is optional. If you have any additional suggestions beyond those relevant to the questions above, please number and list them here.
-  
+ 

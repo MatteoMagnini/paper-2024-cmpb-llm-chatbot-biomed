@@ -1,5 +1,7 @@
 .idea/
-paper-2024-cmpb-llm-chatbot-biomed.pdf
+paper-2024-joms-llm-chatbot-biomed.pdf
+
+*.eps
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
